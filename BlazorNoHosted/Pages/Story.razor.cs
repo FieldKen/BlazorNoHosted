@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics.Metrics;
 using System.IO;
 using System.Linq;
@@ -144,23 +145,31 @@ namespace BlazorNoHosted.Pages
 			);
 
 			People.Add(new Person("De Keyser", [0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0]));
+			People.Add(new Person("Vermachelen", [1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0]));
 			People.Add(new Person("Eva", [0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0]));
-			People.Add(new Person("Jasper", [0, 0, 1, 1, 0, 1, -1, 1, 0, 1, 0]));
-			People.Add(new Person("Ken", [1, 0, 1, 1, 1, 0, -1, 1, 1, 1, 0]));
-			People.Add(new Person("Lars", [0, 1, 1, 0, 0, 0, -1, 1, 1, 0, 0]));
+			People.Add(new Person("Iliana", [1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0]));
+			People.Add(new Person("Ivan", [0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1]));
+			People.Add(new Person("Jasper", [0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0]));
+			People.Add(new Person("Jochen", [0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1]));
+			People.Add(new Person("Joran", [1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0]));
+			People.Add(new Person("Ken", [1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 0]));
+			People.Add(new Person("Lars", [0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0]));
 			People.Add(new Person("Lennert", [0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0]));
-			People.Add(new Person("Maurice", [1, 1, 0, 0, 1, 0, -1, 0, 1, 1, 0]));
+			People.Add(new Person("Maurice", [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0]));
 			People.Add(new Person("Mike", [1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0]));
 			People.Add(new Person("Sharron", [1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0]));
-			People.Add(new Person("Sian", [1, 1, 0, 1, 1, 0, -1, 1, 1, 0, 1]));
-			People.Add(new Person("Evert", [-1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1]));
-			People.Add(new Person("Fee", [-1, 1, 1, 0, 0, -1, -1, -1, -1, 1, 0]));
-			People.Add(new Person("Cedric", [1, 0, 1, 1, 1, 0, -1, -1, -1, -1, -1]));
-			People.Add(new Person("Koen", [-1, 1, 0, -1, -1, -1, -1, -1, -1, -1, -1]));
-			People.Add(new Person("Ivan", [0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]));
-			People.Add(new Person("Joran", [1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]));
-			People.Add(new Person("Yanis", [0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1]));
-			People.Add(new Person("Jochen", [-1, -1, -1, 1, -1, -1, -1, -1, -1, -1, -1]));
+			People.Add(new Person("Sian", [1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1]));
+			People.Add(new Person("Yanis", [0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1]));
+			//People.Add(new Person("Evert", [-1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1]));
+			//People.Add(new Person("Fee", [-1, 1, 1, 0, 0, -1, 1, -1, -1, 1, 0]));
+			//People.Add(new Person("Cedric", [1, 0, 1, 1, 1, 0, -1, -1, -1, -1, -1]));
+			//People.Add(new Person("Koen", [-1, 1, 0, -1, -1, -1, -1, -1, -1, -1, -1]));
+
+			//People.Add(new Person("Evert", [-1, 1, 1, 0, 1, 0, 0, 1, 1, -1, 1]));
+			//People.Add(new Person("Fee", [-1, 1, 1, 0, 0, -1, 1, -1, -1, -1, 0]));
+			//People.Add(new Person("Cedric", [1, 0, 1, 1, 1, 0, -1, -1, -1, -1, -1]));
+			//People.Add(new Person("Koen", [-1, 1, 0, -1, -1, -1, -1, -1, -1, -1, -1]));
+
 		}
 
 		public void NextQuestion(int i)

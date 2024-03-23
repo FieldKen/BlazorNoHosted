@@ -160,6 +160,8 @@ namespace BlazorNoHosted.Pages
 			People.Add(new Person("Sian", [1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1]));
 			People.Add(new Person("Vermachelen", [1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0]));
 			People.Add(new Person("Yanis", [0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1]));
+			People.Add(new Person("Stijn", [1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0]));
+
 			//People.Add(new Person("Evert", [-1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1]));
 			//People.Add(new Person("Fee", [-1, 1, 1, 0, 0, -1, 1, -1, -1, 1, 0]));
 			//People.Add(new Person("Cedric", [1, 0, 1, 1, 1, 0, -1, -1, -1, -1, -1]));

@@ -1,3 +1,29 @@
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+h1:focus {
+    outline: none;
+}
+
+a, .btn-link {
+    color: #0071c1;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.content {
+    padding-top: 1.1rem;
+}
+
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;
 }
@@ -74,4 +100,68 @@
 
 code {
     color: #c02d76;
+}
+
+
+/* General styles */
+#content h1 {
+    text-align: center;
+}
+
+#content {
+    max-width: 50%;
+    margin: auto;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#mid-image {
+    max-width: 50%; /* Adjusts image width to fit container */
+    height: auto; /* Allows image height to adjust proportionally */
+    border-radius: 15px; /* Adjust for more or less rounded corners */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Adjust for a more or less faded edge effect */
+    display: block;
+    margin: 20px auto; /* Center image and add space above and below */
+}
+
+.btn {
+    margin: 10px; /* Add space around buttons */
+    display: inline-block; /* Align buttons in a row */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    #content {
+        max-width: 70%; /* Adjusts content width for smaller screens */
+    }
+
+    #mid-image {
+        max-width: 80%; /* Adjusts image width to fit container */
+    }
+}
+
+@media (max-width: 768px) {
+    #content {
+        max-width: 80%; /* Adjusts content width for smaller screens */
+    }
+
+    #mid-image {
+        max-width: 90%; /* Adjusts image width to fit container */
+    }
+}
+
+@media (max-width: 576px) {
+    #content {
+        max-width: 90%; /* Adjusts content width for even smaller screens */
+    }
+
+    #mid-image {
+        max-width: 100%; /* Adjusts image width to fit container */
+    }
 }

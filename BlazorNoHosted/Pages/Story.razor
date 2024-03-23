@@ -1,0 +1,48 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+<link href="style.css" rel="stylesheet" />
+
+<div id="content">
+	<br />
+	@if (Question <= Questions.Count)
+	{
+		<h1>Question @Question</h1>
+		@for (int i = 0; i < Questions[Question - 1].FullStory.Count; i++)
+		{
+			<p>@Questions[Question - 1].FullStory[i]</p>
+			if (i == 0)
+			{
+				var imageIndex = Question < 10 ? $"0{Question}" : Question.ToString();
+				var src = $"images/i{imageIndex}.webp";
+				<img id="mid-image" src="@src" />
+			}
+		}
+		<div class="buttons-container">
+			@for (int i = 0; i < Questions[Question - 1].Answers.Count; i++)
+			{
+				int index = i;
+				<div class="btn btn-secondary" @onclick="(() => NextQuestion(index))">@Questions[Question - 1].Answers[i]</div>
+			}
+		</div>
+
+	}
+	else
+	{
+		PersonComparisonResult person = FindSimilarities(Answers, People);
+		<div style="text-align:center">
+			<h2>You are most similar to @person.MostSimilar.Name!</h2>
+			@if (person.MostSimilar.Name == "Lennert")
+			{
+				<p>Unlucky</p>
+			}
+			else
+			{
+				<p>Awesome!</p>
+			}
+			<img id="mid-image" src="images/group.jpg" style="max-width:100%;"/>
+
+			<p>You're also similar to @person.SecondMostSimilar.Name.</p>
+		</div>
+	}
+</div>

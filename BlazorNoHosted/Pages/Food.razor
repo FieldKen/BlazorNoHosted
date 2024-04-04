@@ -1,0 +1,55 @@
+﻿@page "/food"
+@inject NavigationManager NavigationManager
+@using System.Web;
+
+<PageTitle>Should I eat it</PageTitle>
+<link href="style.css" rel="stylesheet" />
+
+@{
+	FoodQuestion currentQuestion = @FoodQuestions.FirstOrDefault(x => x.Id == CurrentQuestion)!;
+}
+<div id="content">
+	<br />
+	<h1>@currentQuestion.Question</h1>
+
+	<div class="buttons-container">
+		@if (currentQuestion.Answers.Count > 0)
+		{
+			for (int i = 0; i < currentQuestion.Answers.Count; i++)
+			{
+				int index = currentQuestion.Answers[i].Question;
+				string question = @currentQuestion.Question;
+				string answer = currentQuestion.Answers[i].Answer;
+				<div class="btn btn-secondary" @onclick="(() => NextQuestion(index, question, answer))">@currentQuestion.Answers[i].Answer</div>
+			}
+		}
+		else
+		{
+			<button class="btn btn-secondary" @onclick='() => NavigateToOtherPage("")'>Return</button>
+		}
+	</div>
+
+	@if (CurrentQuestion != 1)
+	{
+		<h2>History</h2>
+		<p>
+			@foreach (HistoryItem item in History)
+			{
+				<strong>@item.Question - </strong> <italic>@item.Answer</italic><br />
+			}
+
+			@if (currentQuestion.Answers.Count == 0)
+			{
+				<strong>@currentQuestion.Question</strong>
+			}
+		</p>
+	}
+
+</div>
+
+@code {
+	private void NavigateToOtherPage(string page)
+	{
+		NavigationManager.NavigateTo(page);
+	}
+}
